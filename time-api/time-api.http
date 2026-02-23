@@ -1,0 +1,11 @@
+@time_api_HostAddress = http://localhost:5186
+
+GET {{time_api_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{time_api_HostAddress}}/todos/1
+Accept: application/json
+
+###
