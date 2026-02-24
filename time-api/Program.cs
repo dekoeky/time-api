@@ -18,3 +18,5 @@ if (app.Environment.IsDevelopment())
 app.MapEndpoints();
 
 app.Run();
+
+internal partial class Program;

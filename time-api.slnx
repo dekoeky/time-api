@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="time-api.tests/time-api.tests.csproj" Id="57638df9-925a-4444-8d7c-98cba81370b7" />
   <Project Path="time-api/time-api.csproj" Id="8242e187-6997-4b9b-b467-443d54e29dbd" />
 </Solution>
