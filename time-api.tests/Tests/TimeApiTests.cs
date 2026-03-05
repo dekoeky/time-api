@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace time_api.tests;
+namespace time_api.Tests;
 
 [TestClass]
-public sealed class Test1
+public sealed class TimeApiTests
 {
     private static WebApplicationFactory<Program> _factory;
     static HttpClient client;

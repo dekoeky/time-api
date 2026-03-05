@@ -1,4 +1,7 @@
 <Solution>
+  <Project Path="time-api.client.tests.integration/time-api.client.tests.integration.csproj" Id="b7d4c114-7a2c-4e60-9826-5b540101afa0" />
+  <Project Path="time-api.client.tests/time-api.client.tests.csproj" Id="917889eb-41a0-45e2-a187-ff760a483167" />
+  <Project Path="time-api.client/time-api.client.csproj" Id="7fda387c-9c8a-4c58-9b73-877ba46e80ed" />
   <Project Path="time-api.tests/time-api.tests.csproj" Id="57638df9-925a-4444-8d7c-98cba81370b7" />
   <Project Path="time-api/time-api.csproj" Id="8242e187-6997-4b9b-b467-443d54e29dbd" />
 </Solution>

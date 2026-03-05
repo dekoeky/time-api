@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="time-api.tests" />
+    <InternalsVisibleTo Include="time-api.client.tests.integration" />
   </ItemGroup>
 
 </Project>
