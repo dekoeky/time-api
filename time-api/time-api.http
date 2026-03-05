@@ -1,11 +1,49 @@
 @time_api_HostAddress = http://localhost:5186
 
-GET {{time_api_HostAddress}}/todos/
+GET {{time_api_HostAddress}}/datetime/
 Accept: application/json
-
 ###
 
-GET {{time_api_HostAddress}}/todos/1
+GET {{time_api_HostAddress}}/datetime/local
 Accept: application/json
+###
 
+GET {{time_api_HostAddress}}/datetime/utc
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/time/
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/time/local
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/time/utc
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/date/
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/date/local
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/date/utc
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/datetimeoffset/
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/datetimeoffset/local
+Accept: application/json
+###
+
+GET {{time_api_HostAddress}}/datetimeoffset/utc
+Accept: application/json
 ###
