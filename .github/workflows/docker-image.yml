@@ -42,7 +42,7 @@ jobs:
       run: |
         docker buildx build \
         --platform linux/amd64,linux/arm64 \
-        -f time-api/Dockerfile \
+        -f time-api/Dockerfile.default \
         -t ${{ vars.DOCKER_REPO }}:dev-default-latest \
         -t ${{ vars.DOCKER_REPO }}:dev-latest \
         --push .
