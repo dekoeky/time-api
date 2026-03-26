@@ -38,6 +38,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}  
         
     - name: Build the Docker image
+      if: false
       # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       run: |
         docker buildx build \
@@ -46,3 +47,21 @@ jobs:
         -t ${{ vars.DOCKER_REPO }}:dev-default-latest \
         -t ${{ vars.DOCKER_REPO }}:dev-latest \
         --push .
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v7.0.0
+      with:
+        context: .
+        file: time-api/Dockerfile.default
+        labels: |
+          EXAMPLE=HelloWorld
+        platforms: |
+          linux/arm64
+          linux/amd64
+        # pull: # optional, default is false
+        push: true
+        tags: |
+          ${{ vars.DOCKER_REPO }}:dev-default-latest
+          ${{ vars.DOCKER_REPO }}:dev-latest
+              
+
