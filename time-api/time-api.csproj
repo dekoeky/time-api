@@ -7,9 +7,9 @@
     <RootNamespace>time_api</RootNamespace>
     <InvariantGlobalization>true</InvariantGlobalization>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <PublishAot>true</PublishAot>
-    <InvariantGlobalization>true</InvariantGlobalization>
-    <PublishTrimmed>true</PublishTrimmed>
+    <!-- <PublishAot>true</PublishAot> -->
+    <!-- <InvariantGlobalization>true</InvariantGlobalization> -->
+    <!-- <PublishTrimmed>true</PublishTrimmed> -->
   </PropertyGroup>
 
   <ItemGroup>
