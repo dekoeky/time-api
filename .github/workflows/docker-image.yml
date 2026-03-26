@@ -21,7 +21,7 @@ jobs:
   build:
     permissions:
       packages: write
-      
+
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
@@ -48,17 +48,6 @@ jobs:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Build the Docker image
-      if: false
-      # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      run: |
-        docker buildx build \
-        --platform linux/amd64,linux/arm64 \
-        -f time-api/Dockerfile.default \
-        -t ${{ vars.DOCKER_REPO }}:dev-default-latest \
-        -t ${{ vars.DOCKER_REPO }}:dev-latest \
-        --push .
 
     - name: Build and push Docker images
       uses: docker/build-push-action@v7.0.0
