@@ -29,5 +29,10 @@ static class Endpoints
 
         // TODO: info on timezone
 
+        // A redirect from the root makes debugging easier
+        app.MapGet("/", () => Results.Redirect("/time"));
+
+        // Indicate the caller that he reached the api, but an unmapped path
+        app.MapFallback(() => Results.NotFound("Not sure what you are looking for 🧐 Try using a specified path!"));
     }
 }
