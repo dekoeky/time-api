@@ -15,6 +15,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+//app.UseStaticFiles();
+app.MapFavIcon();
+
 app.MapEndpoints();
 
 app.Run();
