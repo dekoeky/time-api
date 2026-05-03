@@ -39,5 +39,4 @@ public abstract class BaseFacadeTests<T>(Func<TimeApiClient, T> getFacade) where
     {
         _factory.Dispose();
     }
-
 }

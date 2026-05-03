@@ -1,23 +1,17 @@
-﻿using System.Net.Http.Json;
-using T = System.DateTimeOffset;
+using System.Net.Http.Json;
 
 namespace time_api.client.Facades;
 
-public class DateTimeOffsetFacade : IFacade
+public class DateTimeOffsetFacade(HttpClient client) : IFacade
 {
-    const string group = "/datetimeoffset";
+    private const string group = "/datetimeoffset";
 
-    private readonly HttpClient client;
+    public Task<DateTimeOffset> GetAsync(CancellationToken cancellationToken = default)
+     => client.GetFromJsonAsync<DateTimeOffset>($"{group}/", cancellationToken);
 
-    internal DateTimeOffsetFacade(HttpClient client)
-    {
-        this.client = client;
-    }
+    public Task<DateTimeOffset> GetLocalAsync(CancellationToken cancellationToken = default)
+        => client.GetFromJsonAsync<DateTimeOffset>($"{group}/local", cancellationToken);
 
-    public Task<T> GetAsync(CancellationToken cancellationToken = default)
-        => client.GetFromJsonAsync<T>($"{group}/", cancellationToken);
-    public Task<T> GetLocalAsync(CancellationToken cancellationToken = default)
-        => client.GetFromJsonAsync<T>($"{group}/local", cancellationToken);
-    public Task<T> GetUtcAsync(CancellationToken cancellationToken = default)
-        => client.GetFromJsonAsync<T>($"{group}/utc", cancellationToken);
+    public Task<DateTimeOffset> GetUtcAsync(CancellationToken cancellationToken = default)
+        => client.GetFromJsonAsync<DateTimeOffset>($"{group}/utc", cancellationToken);
 }

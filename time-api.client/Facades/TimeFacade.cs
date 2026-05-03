@@ -1,23 +1,17 @@
-﻿using System.Net.Http.Json;
-using T = System.TimeOnly;
+using System.Net.Http.Json;
 
 namespace time_api.client.Facades;
 
-public class TimeFacade : IFacade
+public class TimeFacade(HttpClient client) : IFacade
 {
     const string group = "/time";
 
-    private readonly HttpClient client;
+    public Task<TimeOnly> GetAsync(CancellationToken cancellationToken = default)
+        => client.GetFromJsonAsync<TimeOnly>($"{group}/", cancellationToken);
 
-    internal TimeFacade(HttpClient client)
-    {
-        this.client = client;
-    }
+    public Task<TimeOnly> GetLocalAsync(CancellationToken cancellationToken = default)
+        => client.GetFromJsonAsync<TimeOnly>($"{group}/local", cancellationToken);
 
-    public Task<T> GetAsync(CancellationToken cancellationToken = default)
-        => client.GetFromJsonAsync<T>($"{group}/", cancellationToken);
-    public Task<T> GetLocalAsync(CancellationToken cancellationToken = default)
-        => client.GetFromJsonAsync<T>($"{group}/local", cancellationToken);
-    public Task<T> GetUtcAsync(CancellationToken cancellationToken = default)
-        => client.GetFromJsonAsync<T>($"{group}/utc", cancellationToken);
+    public Task<TimeOnly> GetUtcAsync(CancellationToken cancellationToken = default)
+        => client.GetFromJsonAsync<TimeOnly>($"{group}/utc", cancellationToken);
 }
